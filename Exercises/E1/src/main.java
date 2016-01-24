@@ -6,7 +6,9 @@ class Counter implements Runnable {
     public void run(){
 	//	try{
 	    for(int i = 0; i < rounds; i++) {
-		counter++;
+		synchronized(this) {
+		    counter++;
+		}
 	    }
 	    //	} catch(InterruptedException e) {
 	    System.out.println("Interrupted!");
